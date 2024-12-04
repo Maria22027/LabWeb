@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Concluída</title>
+    <link rel="stylesheet" href="ingresso.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+</head>
+<body>
+    <header>
+        <h1>Compra Concluída com Sucesso!</h1>
+    </header>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+    <button id="theme-toggle" class="accessibility-button">Alterar Tema</button>
+
+    <div>
+        <button id="normal-vision">Normal</button>
+        <button id="protanopia">Protanopia</button>
+        <button id="deuteranopia">Deuteranopia</button>
+        <button id="tritanopia">Tritanopia</button>
+    </div>
+    <main>
+        <section>
+            <h2>Obrigado pela sua compra!</h2>
+            <p>Seu ingresso foi gerado com sucesso e estará disponível para você na entrada do evento.</p>
+            <p><strong>Código do Ingresso:</strong> <span id="codigo-ingresso"></span></p>
+            <p>Por favor, guarde este código para apresentação no evento.</p>
+        </section>
+
+        <section>
+            <button onclick="voltarParaHome()">Voltar para a Página Inicial</button>
+        </section>
+    </main>
+
+    <script>
+        // Obter o código do ingresso gerado e exibir na página
+        const codigoIngresso = Math.floor(Math.random() * 1000000);  // Simulação de código aleatório
+        document.getElementById("codigo-ingresso").textContent = codigoIngresso;
+
+        // Função para redirecionar o usuário para a página inicial
+        function voltarParaHome() {
+            window.location.href = "index.html";  // Substitua por sua página inicial
+        }
+    </script>
+    <script src="acessibilidade.js"></script>
+</body>
+</html>

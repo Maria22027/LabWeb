@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos Turísticos de Itanhaém</title>
+    <link rel="stylesheet" href="pontos_turis.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+    <link rel="stylesheet" href="ingresso.css">
+</head>
+<body>
+    <header>
+        <h1>Pontos Turísticos de Itanhaém</h1>
+        <p>Explore os locais mais emblemáticos e fascinantes da cidade.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="saibamais.html">História</a>
+        <a href="restaurante.html">Restaurantes</a>
+        <a href="ingresso.html">Ingressos</a>
+        <a href="hospedagem.html" aria-current="page">Hospedagens</a>
+    </nav>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+    <button id="theme-toggle" class="accessibility-button">Alterar Tema</button>
+
+    <div>
+        <button id="normal-vision">Normal</button>
+        <button id="protanopia">Protanopia</button>
+        <button id="deuteranopia">Deuteranopia</button>
+        <button id="tritanopia">Tritanopia</button>
+    </div>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Conheça os Principais Pontos Turísticos</h2>
+            <p>
+                Itanhaém é uma cidade rica em história, natureza e cultura. Aqui estão alguns dos 
+                locais que você não pode deixar de visitar durante sua estadia.
+            </p>
+        </section>
+
+        <section class="places">
+            <article class="place">
+                <img src="./img/ponto1.jpg" alt="Convento de Nossa Senhora da Conceição">
+                <h3>Praia do Centro (Orla)</h3>
+                <p>
+                    Um lugar tanto para nadar como andar e pescar,
+                     no começo dessa praia dá para observar a junção do mar com o rio.
+                </p>
+            </article>
+
+            <article class="place">
+                <img src="./img/ponto2.jpg" alt="Praia dos Sonhos">
+                <h3>Cama da Anchieta</h3>
+                <p>
+                   É uma formação rochosa plana à beira-mar em formato de espreguiçadeira coberta por outra grande pedra.
+                     O que dá a impressão de formar uma larga e confortável cama natural protegida da ação do sol.
+                </p>
+            </article>
+
+            <article class="place">
+                <img src="./img/ponto3.jpg" alt="Cama de Anchieta">
+                <h3>Cachoeira Três Quedas</h3>
+                <p>
+                    Cachoeira conhecida por ter três quedas juntas e agora também conhecida por ser a 
+                    primeira cachoeira da baixada santista
+                    com acessibilidade.
+                </p>
+            </article>
+
+            <article class="place">
+                <img src="./img/ponto4.jpg" alt="Ilha das Cabras">
+                <h3>Alameda Emídio de Souza</h3>
+                <p>
+                    Local idela para os amantes de pesca.
+                </p>
+            </article>
+            <article class="place">
+                <img src="./img/ponto5.jpg" alt="Convento de Nossa Senhora da Conceição">
+                <h3>Possinho Cibratel</h3>
+                <p>
+                    O possinho é reconhecido por não ter ondas e em alguns dias abrigarem tartarugas.
+                </p>
+            </article>
+
+            <article class="place">
+                <img src="./img/ponto6.jpg" alt="Praia dos Sonhos">
+                <h3>Matriz de Sant´Anna</h3>
+                <p>
+                    Uma das Igrejas mais antigas de itanhaém, repleta de histórias e obras antigas.
+                </p>
+            </article>
+
+            <article class="place">
+                <img src="./img/ponto7.jpeg" alt="Cama de Anchieta">
+                <h3>Praia das Conchas</h3>
+                <p>
+                    Um local ideal para levar crianças ou amantes de conchas,
+                     uma praia incrivel aonde a areia é repleta de conchas.
+                </p>
+            </article>
+
+            <article class="place">
+                <img src="./img/ponto8.jpg" alt="Ilha das Cabras">
+                <h3>Convento</h3>
+                <p>
+                    Um importante convento, um lugar interessante e com uma vista linda da cidade. 
+                </p>
+            </article>
+            <article class="place">
+                <img src="./img/ponto9.jpg" alt="Ilha das Cabras">
+                <h3>Ilha das Cabras</h3>
+                <p>
+                    Um pequeno paraíso natural, ideal para quem gosta de mergulho
+                     ou quer explorar a vida marinha 
+                    local.
+                </p>
+            </article>  
+        </section>
+    </main>
+
+    <script src="acessibilidade.js"></script>
+</body>
+</html>

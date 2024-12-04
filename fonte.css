@@ -1,0 +1,30 @@
+body {
+    font-size: 1em; /* Tamanho padrão para o body */
+}
+
+h1 {
+    font-size: 2em; /* Será 2x o tamanho da fonte do body */
+}
+
+h2 {
+    font-size: 4em;
+}
+
+p {
+    font-size: 10em;
+}
+
+li {
+    font-size: 15em;
+}
+span {
+    font-size: 15em;
+}
+
+a {
+    font-size: 15em;
+}
+h5, h6 {
+    font-size: 20em;
+}
+

@@ -1,0 +1,20 @@
+/* Filtro para Protanopia (Dificuldade com tons de vermelho) */
+.protanopia {
+    filter: hue-rotate(-30deg) contrast(0.8);
+}
+
+/* Filtro para Deuteranopia (Dificuldade com tons de verde) */
+.deuteranopia {
+    filter: hue-rotate(-60deg) contrast(0.8);
+}
+
+/* Filtro para Tritanopia (Dificuldade com tons de azul) */
+.tritanopia {
+    filter: hue-rotate(90deg) contrast(0.8);
+}
+
+/* Filtro para Acromatopsia (Sem percepção de cor) */
+.acromatopsia {
+    filter: grayscale(100%);
+}
+

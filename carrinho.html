@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="ingresso.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+</head>
+
+<body>
+    <header>
+        <h1>Seu Carrinho</h1>
+        <a href="ingresso.html" class="btn-voltar">Voltar à Loja</a>
+    </header>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+    <button id="theme-toggle" class="accessibility-button">Alterar Tema</button>
+
+    <div>
+        <button id="normal-vision">Normal</button>
+        <button id="protanopia">Protanopia</button>
+        <button id="deuteranopia">Deuteranopia</button>
+        <button id="tritanopia">Tritanopia</button>
+    </div>
+    <main>
+        <section id="carrinho">
+            <ul id="itens-carrinho"></ul>
+            <p id="total">Total: R$ 0,00</p>
+            <button id="limpar-carrinho" onclick="limparCarrinho()">Limpar Carrinho</button>
+            <button id="finalizar-compra" onclick="finalizarCompra()">Finalizar Compra</button>
+        </section>
+    </main>
+
+    <script>
+        function carregarCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            const lista = document.getElementById("itens-carrinho");
+            const totalEl = document.getElementById("total");
+            let total = 0;
+
+            // Limpar itens do carrinho na página
+            lista.innerHTML = '';
+
+            carrinho.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.textContent = `${item.nome} - ${item.quantidade} ingresso(s) - R$ ${item.total.toFixed(2)}`;
+
+                // Botão para excluir item específico
+                const excluirBtn = document.createElement("button");
+                excluirBtn.classList.add("excluir-btn"); // Adicionando a classe para o botão
+                excluirBtn.textContent = "Excluir";
+                excluirBtn.onclick = function() {
+                    excluirItem(index);
+                };
+
+                li.appendChild(excluirBtn);
+                lista.appendChild(li);
+
+                total += item.total;
+            });
+
+            totalEl.textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+
+        function excluirItem(index) {
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            carrinho.splice(index, 1);  // Remove o item pelo índice
+
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+            carregarCarrinho();  // Atualiza a página
+        }
+
+        function limparCarrinho() {
+            localStorage.removeItem("carrinho");  // Limpa todo o carrinho
+            carregarCarrinho();  // Atualiza a página
+        }
+
+        function finalizarCompra() {
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio. Adicione itens para comprar.");
+                return;
+            }
+
+            // Verificar se o usuário está logado
+            const usuarioLogado = localStorage.getItem("usuarioLogado");
+            if (!usuarioLogado) {
+                alert("Você precisa estar logado para finalizar a compra.");
+                window.location.href = "login.html";  // Redireciona para a página de login
+                return;
+            }
+
+            // Se o usuário estiver logado, redireciona para a página de compra
+            window.location.href = "compra.html";
+        }
+
+        carregarCarrinho();
+    </script>
+    <script src="acessibilidade.js"></script>
+</body>
+</html>

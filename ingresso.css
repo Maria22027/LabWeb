@@ -1,0 +1,161 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de cada evento (show) */
+.evento {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.evento:hover {
+    transform: scale(1.05);
+}
+
+
+/* Cabeçalho */
+header {
+    background-color: #0077b6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #023e8a;
+}
+
+/* Formulário */
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da mensagem de sucesso */
+.mensagem-sucesso {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(80%); /* Para centralizar horizontalmente */
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    z-index: 1000;
+    animation: fadeInOut 3s forwards; /* Aparece e desaparece em 3 segundos */
+}
+
+/* Animação de fadeInOut */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        top: 0;
+    }
+    20% {
+        opacity: 1;
+        top: 20px;
+    }
+    80% {
+        opacity: 1;
+        top: 20px;
+    }
+    100% {
+        opacity: 0;
+        top: 0;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0077b6;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.5);
+}
+
+/* Botão */
+button {
+    background-color: #0076b5;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.excluir-btn {
+    background-color: #0076b5;  /* Cor de fundo vermelha */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 490px;
+    display: flex;
+    transform: translateY(-28px); /* Move o elemento 20px para cima */
+}
+
+button:hover {
+    background-color: #023e8a;
+}
+
+/* Ajuste geral */
+input[type="text"] {
+    width: 90%; /* Ajuste a largura para 90% */
+    padding: 8px; /* Reduz o padding para tornar o campo mais compacto */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px; /* Reduz ligeiramente o tamanho da fonte */
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.5);
+}
+
+/* Espaçamento ajustado */
+form input + label,
+form label + label {
+    margin-top: 8px; /* Reduz o espaço entre os campos */
+}
+
+
+/* Espaçamento */
+form input + label,
+form label + label {
+    margin-top: 10px;
+}

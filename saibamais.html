@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História de Itanhaém</title>
+    <link rel="stylesheet" href="saibamais.css">
+    <link rel="stylesheet" href="ingresso.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+</head>
+<body>
+    <header>
+        <h1>História de Itanhaém</h1>
+        <p>Descubra o passado fascinante desta cidade litorânea.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="saibamais.html" aria-current="page">História</a>
+        <a href="restaurante.html">Restaurantes</a>
+        <a href="pontos_turis.html">Pontos Turísticos</a>
+        <a href="ingresso.html">Ingressos</a>
+        <a href="hospedagem.html" aria-current="page">Hospedagens</a>
+    </nav>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+    <button id="theme-toggle" class="accessibility-button">Alterar Tema</button>
+
+    <div>
+        <button id="normal-vision">Normal</button>
+        <button id="protanopia">Protanopia</button>
+        <button id="deuteranopia">Deuteranopia</button>
+        <button id="tritanopia">Tritanopia</button>
+    </div>
+
+    <div class="container">
+        <section class="intro">
+            <h2>Bem-vindo à história de Itanhaém</h2>
+            <p>
+                Itanhaém é uma das cidades mais antigas do Brasil, fundada em 22 de abril de 1532. 
+                Conhecida por sua rica história e beleza natural, a cidade foi palco de eventos importantes 
+                durante o período colonial e ainda preserva diversos marcos históricos.
+            </p>
+        </section>
+
+        <section class="history-details">
+            <h2>Marcos Históricos</h2>
+            <article>
+                <h3>Igreja Matriz de Sant’Anna</h3>
+                <p>
+                    Construída no século XVI, é um dos marcos mais antigos de Itanhaém. Sua arquitetura 
+                    preserva traços coloniais e a igreja é um ponto de visitação obrigatório.
+                </p>
+            </article>
+
+            <article>
+                <h3>Convento de Nossa Senhora da Conceição</h3>
+                <p>
+                    Localizado no alto de um morro, o convento oferece uma vista panorâmica da cidade e 
+                    é um dos principais cartões-postais. Foi erguido por volta de 1654 e carrega histórias 
+                    fascinantes.
+                </p>
+            </article>
+
+            <article>
+                <h3>Praça Narciso de Andrade</h3>
+                <p>
+                    Centro histórico de Itanhaém, onde é possível caminhar pelas ruas de pedra e visitar 
+                    construções antigas, como o sobrado que já foi a Casa de Câmara e Cadeia.
+                </p>
+            </article>
+        </section>
+
+    </div>
+    <script src="acessibilidade.js"></script>
+</body>
+</html>

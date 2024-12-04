@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Ingressos</title>
+    <link rel="stylesheet" href="ingresso.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+</head>
+<body>
+    <header>
+        <h1>Venda de Ingressos</h1>
+        <a href="index.html">Início</a>
+        <a href="carrinho.html" class="btn-carrinho">Ver Carrinho</a>
+    </header>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+    <button id="theme-toggle" class="accessibility-button">Alterar Tema</button>
+
+    <div>
+        <button id="normal-vision">Normal</button>
+        <button id="protanopia">Protanopia</button>
+        <button id="deuteranopia">Deuteranopia</button>
+        <button id="tritanopia">Tritanopia</button>
+    </div>
+    <main>
+        <!-- Show 1 -->
+        <section class="evento">
+            <div class="detalhes">
+                <h2>Show da Banda XYZ</h2>
+                <p>Local: Arena Itanhaém</p>
+                <p>Data: 20 de Dezembro de 2024</p>
+                <p>Horário: 19:00</p>
+                <p>Preço: R$ 120,00</p>
+                <label for="quantidade1">Quantidade:</label>
+                <input type="number" id="quantidade1" min="1" max="10">
+                <button onclick="adicionarCarrinho('Show da Banda XYZ', 120, document.getElementById('quantidade1').value)">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+
+        <!-- Show 2 -->
+        <section class="evento">
+            <div class="detalhes">
+                <h2>Concerto Sinfônico</h2>
+                <p>Local: Teatro Municipal</p>
+                <p>Data: 25 de Dezembro de 2024</p>
+                <p>Horário: 20:00</p>
+                <p>Preço: R$ 150,00</p>
+                <label for="quantidade2">Quantidade:</label>
+                <input type="number" id="quantidade2" min="1" max="10">
+                <button onclick="adicionarCarrinho('Concerto Sinfônico', 150, document.getElementById('quantidade2').value)">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+
+        <!-- Show 3 -->
+        <section class="evento">
+            <div class="detalhes">
+                <h2>Festival de Jazz</h2>
+                <p>Local: Praça da Cultura</p>
+                <p>Data: 30 de Dezembro de 2024</p>
+                <p>Horário: 18:00</p>
+                <p>Preço: R$ 100,00</p>
+                <label for="quantidade3">Quantidade:</label>
+                <input type="number" id="quantidade3" min="1" max="10">
+                <button onclick="adicionarCarrinho('Festival de Jazz', 100, document.getElementById('quantidade3').value)">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+
+        <!-- Show 4 -->
+        <section class="evento">
+            
+            <div class="detalhes">
+                <h2>Espetáculo de Comédia</h2>
+                <p>Local: Teatro Central</p>
+                <p>Data: 15 de Janeiro de 2025</p>
+                <p>Horário: 21:00</p>
+                <p>Preço: R$ 80,00</p>
+                <label for="quantidade4">Quantidade:</label>
+                <input type="number" id="quantidade4" min="1" max="10">
+                <button onclick="adicionarCarrinho('Espetáculo de Comédia', 80, document.getElementById('quantidade4').value)">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function adicionarCarrinho(nome, preco, quantidade) {
+            if (quantidade <= 0 || isNaN(quantidade)) {
+                alert("Por favor, insira uma quantidade válida.");
+                return;
+            }
+
+            const item = {
+                nome: nome,
+                preco: preco,
+                quantidade: quantidade,
+                total: preco * quantidade
+            };
+
+            // Recuperar o carrinho existente no Local Storage
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            carrinho.push(item);
+
+            // Salvar no Local Storage
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+            // Exibir mensagem de sucesso
+            mostrarMensagemSucesso("Item adicionado ao carrinho com sucesso!");
+        }
+
+        function mostrarMensagemSucesso(mensagem) {
+            const mensagemDiv = document.createElement("div");
+            mensagemDiv.className = "mensagem-sucesso";
+            mensagemDiv.textContent = mensagem;
+
+            document.body.appendChild(mensagemDiv);
+
+            // Remover mensagem após 3 segundos
+            setTimeout(() => {
+                mensagemDiv.remove();
+            }, 3000);
+        }
+    </script>
+    <script src="acessibilidade.js"></script>
+</body>
+</html>
